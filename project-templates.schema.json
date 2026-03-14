@@ -34,5 +34,6 @@
     "command_config_templates",
     "status_pane_command_templates",
     "external_config_templates"
-  ]
+  ],
+  "additionalProperties": false
 }
