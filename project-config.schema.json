@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://meepleek.com/schema/project-config.schema.json",
+  "title": "MeepleekProjectConfig",
+  "allOf": [
+    {
+      "$ref": "#/definitions/NestedProject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": [
+            "prj",
+            "cfg",
+            "gd"
+          ]
+        },
+        "cwd": {
+          "type": "string"
+        },
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "command_config": {
+          "anyOf": [
+            {
+              "$ref": "defs.schema.json#/definitions/ProjectCommandConfig"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "task_project": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "omitted_panes": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "editor",
+              "git"
+            ]
+          }
+        },
+        "nested_projects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NestedProject"
+          }
+        },
+        "command_templates": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "defs.schema.json#/definitions/MappedCommand"
+          }
+        },
+        "command_config_templates": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "defs.schema.json#/definitions/ProjectCommandConfig"
+          }
+        },
+        "status_pane_command_templates": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "defs.schema.json#/definitions/StatusPaneCommand"
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "category",
+        "cwd",
+        "command_config"
+      ],
+      "additionalProperties": false
+    }
+  ],
+  "definitions": {
+    "NestedProject": {
+      "type": "object",
+      "properties": {
+        "cwd": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "label": {
+          "type": "string"
+        },
+        "command_config": {
+          "anyOf": [
+            {
+              "$ref": "defs.schema.json#/definitions/ProjectCommandConfig"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "task_project": {
+          "type": "string"
+        },
+        "omitted_panes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "editor",
+              "git"
+            ]
+          }
+        }
+      },
+      "required": [
+        "cwd",
+        "command_config"
+      ]
+    }
+  }
+}

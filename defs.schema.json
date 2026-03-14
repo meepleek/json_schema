@@ -1,0 +1,150 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://meepleek.com/schema/defs.schema.json",
+  "title": "MeepleekDefs",
+  "definitions": {
+    "ExternalCommandConfig": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string",
+          "enum": [
+            "npm",
+            "vscode"
+          ]
+        }
+      },
+      "required": [
+        "path",
+        "source"
+      ]
+    },
+    "MappedCommand": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string",
+          "enum": [
+            "dash",
+            "npm",
+            "vscode"
+          ]
+        },
+        "cmd": {
+          "type": "string"
+        },
+        "auto_close": {
+          "type": "boolean"
+        },
+        "multi_prefix": {
+          "type": "string"
+        },
+        "env": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "label",
+        "source",
+        "cmd",
+        "auto_close"
+      ]
+    },
+    "StatusPaneCommand": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "bind": {
+          "type": "string"
+        },
+        "command": {
+          "type": "string"
+        },
+        "stdout": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "analyzer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "eslint"
+          ]
+        }
+      },
+      "required": [
+        "label",
+        "bind",
+        "command"
+      ]
+    },
+    "ProjectCommandConfig": {
+      "type": "object",
+      "properties": {
+        "status_pane": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/StatusPaneCommand"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "commands": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/MappedCommand"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "external_configs": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/ExternalCommandConfig"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
