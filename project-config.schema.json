@@ -85,7 +85,6 @@
       },
       "required": [
         "category",
-        "cwd",
         "command_config"
       ],
       "additionalProperties": false
