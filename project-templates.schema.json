@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "root.schema.json",
   "$id": "https://meepleek.com/schema/project-templates.schema.json",
   "title": "MeepleekProjectTemplates",
   "type": "object",
@@ -7,25 +7,25 @@
     "command_templates": {
       "type": "object",
       "additionalProperties": {
-        "$ref": "defs.schema.json#/definitions/MappedCommand"
+        "$ref": "defs.schema.json#/$defs/MappedCommand"
       }
     },
     "command_config_templates": {
       "type": "object",
       "additionalProperties": {
-        "$ref": "defs.schema.json#/definitions/ProjectCommandConfig"
+        "$ref": "defs.schema.json#/$defs/ProjectCommandConfig"
       }
     },
     "status_pane_command_templates": {
       "type": "object",
       "additionalProperties": {
-        "$ref": "defs.schema.json#/definitions/StatusPaneCommand"
+        "$ref": "defs.schema.json#/$defs/StatusPaneCommand"
       }
     },
     "external_config_templates": {
       "type": "object",
       "additionalProperties": {
-        "$ref": "defs.schema.json#/definitions/ExternalCommandConfig"
+        "$ref": "defs.schema.json#/$defs/ExternalCommandConfig"
       }
     },
     "$schema": {
@@ -38,5 +38,5 @@
     "status_pane_command_templates",
     "external_config_templates"
   ],
-  "additionalProperties": false
+  "unevaluatedProperties": false
 }

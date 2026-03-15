@@ -1,0 +1,5 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meepleek.com/schema/root.schema.json",
+  "title": "MeepleekRoot"
+}
