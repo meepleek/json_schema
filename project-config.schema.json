@@ -9,12 +9,7 @@
   ],
   "properties": {
     "category": {
-      "type": "string",
-      "enum": [
-        "prj",
-        "cfg",
-        "gd"
-      ]
+      "$ref": "defs.schema.json#/$defs/ProjectCategory"
     },
     "nested_projects": {
       "type": "array",

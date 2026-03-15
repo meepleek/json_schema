@@ -1,0 +1,27 @@
+{
+  "$schema": "root.schema.json",
+  "$id": "https://meepleek.com/schema/project-roots.schema.json",
+  "title": "MeepleekProjectRoots",
+  "propertyNames": {
+    "anyOf": [
+      {
+        "const": "$schema"
+      },
+      {
+        "$ref": "defs.schema.json#/$defs/ProjectCategory"
+      }
+    ]
+  },
+  "properties": {
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    }
+  },
+  "unevaluatedProperties": false
+}

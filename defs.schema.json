@@ -3,6 +3,14 @@
   "$id": "https://meepleek.com/schema/defs.schema.json",
   "title": "MeepleekDefs",
   "$defs": {
+    "ProjectCategory": {
+      "type": "string",
+      "enum": [
+        "prj",
+        "cfg",
+        "gd"
+      ]
+    },
     "ExternalCommandConfig": {
       "type": "object",
       "properties": {
