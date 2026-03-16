@@ -17,6 +17,10 @@
         "$ref": "#/$defs/NestedProject"
       }
     },
+    "main_worktree_path": {
+      "type": "string",
+      "format": "uri-reference"
+    },
     "command_templates": {
       "type": "object",
       "additionalProperties": {
