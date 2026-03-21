@@ -33,7 +33,7 @@
         "external_source"
       ]
     },
-    "MappedCommand": {
+    "RunnableCommand": {
       "type": "object",
       "properties": {
         "label": {
@@ -50,6 +50,9 @@
         },
         "multi_prefix": {
           "type": "string"
+        },
+        "confirm": {
+          "type": "boolean"
         },
         "env": {
           "type": "object",
@@ -125,7 +128,7 @@
           "items": {
             "anyOf": [
               {
-                "$ref": "#/$defs/MappedCommand"
+                "$ref": "#/$defs/RunnableCommand"
               },
               {
                 "type": "string"

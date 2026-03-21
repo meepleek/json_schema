@@ -7,7 +7,7 @@
     "command_templates": {
       "type": "object",
       "additionalProperties": {
-        "$ref": "defs.schema.json#/$defs/MappedCommand"
+        "$ref": "defs.schema.json#/$defs/RunnableCommand"
       }
     },
     "command_config_templates": {
