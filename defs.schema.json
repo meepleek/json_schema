@@ -11,23 +11,26 @@
         "gd"
       ]
     },
+    "ExternalCommandSource": {
+      "type": "string",
+      "enum": [
+        "npm",
+        "vscode"
+      ]
+    },
     "ExternalCommandConfig": {
       "type": "object",
       "properties": {
         "path": {
           "type": "string"
         },
-        "source": {
-          "type": "string",
-          "enum": [
-            "npm",
-            "vscode"
-          ]
+        "external_source": {
+          "$ref": "#/$defs/ExternalCommandSource"
         }
       },
       "required": [
         "path",
-        "source"
+        "external_source"
       ]
     },
     "MappedCommand": {
@@ -36,13 +39,8 @@
         "label": {
           "type": "string"
         },
-        "source": {
-          "type": "string",
-          "enum": [
-            "dash",
-            "npm",
-            "vscode"
-          ]
+        "external_source": {
+          "$ref": "#/$defs/ExternalCommandSource"
         },
         "cmd": {
           "type": "string"
@@ -62,7 +60,6 @@
       },
       "required": [
         "label",
-        "source",
         "cmd",
         "auto_close"
       ]
