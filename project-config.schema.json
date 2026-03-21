@@ -103,7 +103,8 @@
             "$ref": "#/$defs/NestedProject"
           }
         }
-      }
+      },
+      "unevaluatedProperties": false
     }
   }
 }

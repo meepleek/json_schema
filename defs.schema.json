@@ -31,7 +31,8 @@
       "required": [
         "path",
         "external_source"
-      ]
+      ],
+      "unevaluatedProperties": false
     },
     "RunnableCommand": {
       "type": "object",
@@ -65,7 +66,8 @@
         "label",
         "cmd",
         "auto_close"
-      ]
+      ],
+      "unevaluatedProperties": false
     },
     "StatusPaneCommand": {
       "type": "object",
@@ -99,7 +101,8 @@
         "label",
         "bind",
         "command"
-      ]
+      ],
+      "unevaluatedProperties": false
     },
     "ProjectCommandConfig": {
       "type": "object",
