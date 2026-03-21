@@ -12,10 +12,7 @@
       "$ref": "defs.schema.json#/$defs/ProjectCategory"
     },
     "nested_projects": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/NestedProject"
-      }
+      "$ref": "#/$defs/NestedProjectsConfig"
     },
     "main_worktree_path": {
       "type": "string",
@@ -94,6 +91,19 @@
         "cwd"
       ],
       "unevaluatedProperties": false
+    },
+    "NestedProjectsConfig": {
+      "properties": {
+        "show_as_root": {
+          "type": "boolean"
+        },
+        "projects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NestedProject"
+          }
+        }
+      }
     }
   }
 }
